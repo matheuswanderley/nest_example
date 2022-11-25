@@ -76,7 +76,7 @@ describe('UsersController', () => {
     expect(mockUsersService.findAll).toHaveBeenCalled();
   });
 
-  it('should be find one users', () => {
+  it('should be find one user', () => {
     const dto = {
       _id: expect.any(String),
       name: 'matheus',
@@ -87,7 +87,7 @@ describe('UsersController', () => {
     expect(mockUsersService.findOne).toHaveBeenCalled();
   });
 
-  it('should be update one users', () => {
+  it('should be update one user', () => {
     const dto = {
       _id: expect.any(String),
       name: 'matheus',
@@ -98,7 +98,7 @@ describe('UsersController', () => {
     expect(mockUsersService.update).toHaveBeenCalled();
   });
 
-  it('should be delete one users', () => {
+  it('should be delete one user', () => {
     const dto = {
       _id: expect.any(String),
       name: 'matheus',
