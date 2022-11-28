@@ -1,6 +1,5 @@
 import { getModelToken } from '@nestjs/mongoose';
 import { Test, TestingModule } from '@nestjs/testing';
-import { async } from 'rxjs';
 import { UsersController } from './users.controller';
 import { UsersService } from './users.service';
 
