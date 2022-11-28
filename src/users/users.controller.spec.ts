@@ -29,17 +29,19 @@ describe('UsersController', () => {
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
       controllers: [UsersController],
-      providers: [UsersService, {
-        provide: getModelToken('User'),
-        useValue: UserModel
-      }],
-    })
-      .compile();
+      providers: [
+        UsersService,
+        {
+          provide: getModelToken('User'),
+          useValue: UserModel,
+        },
+      ],
+    }).compile();
 
     controller = module.get<UsersController>(UsersController);
   });
 
-  it('should be create a user', async() => {
+  it('should be create a user', async () => {
     const dto = {
       _id: expect.any(String),
       name: 'matheus',
@@ -49,7 +51,7 @@ describe('UsersController', () => {
     expect(await controller.create(dto)).toEqual(dto);
   });
 
-  it('should be findall a users', async() => {
+  it('should be findall a users', async () => {
     const dto = {
       _id: expect.any(String),
       name: 'matheus',
@@ -59,7 +61,7 @@ describe('UsersController', () => {
     expect(await controller.findAll()).toEqual(dto);
   });
 
-  it('should be find one user', async() => {
+  it('should be find one user', async () => {
     const dto = {
       _id: expect.any(String),
       name: 'matheus',
@@ -69,7 +71,7 @@ describe('UsersController', () => {
     expect(await controller.findOne('1')).toEqual(dto);
   });
 
-  it('should be update one user', async() => {
+  it('should be update one user', async () => {
     const dto = {
       _id: expect.any(String),
       name: 'matheus',
@@ -79,7 +81,7 @@ describe('UsersController', () => {
     expect(await controller.update('1', dto)).toEqual(dto);
   });
 
-  it('should be delete one user', async() => {
+  it('should be delete one user', async () => {
     const dto = {
       _id: expect.any(String),
       name: 'matheus',
