@@ -9,6 +9,7 @@ import { User, UserDocument } from "./entities/user.entity";
 export class UsersService {
 
   constructor(@InjectModel(User.name) private userModel: Model<UserDocument>) {}
+ 
   create(createUserDto: CreateUserDto) {
     const user = new this.userModel(createUserDto)
     return user.save();
@@ -35,6 +36,6 @@ export class UsersService {
   remove(id: string) {
     return this.userModel.deleteOne({
         _id: id
-    }).exec();
+    })
   }
 }
